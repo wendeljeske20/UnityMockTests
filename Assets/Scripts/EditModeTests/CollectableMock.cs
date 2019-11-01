@@ -5,21 +5,35 @@ using NUnit.Framework;
 
 public class CollectableMock
 {
-    [Test]
-    public void PlayerDamageBuffCollect()
-    {
-        ICharacter player = new Player();
-        player.damage = 5;
 
-        DamageBuff damageBuff = new DamageBuff();
-        damageBuff.amount = 10;
+	[Test]
+	public void PlayerApplyDamageBuff()
+	{
+		GameObject playerGO = new GameObject("Player");
+		Player player = playerGO.AddComponent<Player>();
 
-        damageBuff.SetCharacterStatus(player);
+		DamageBuffStatus damageBuff = new DamageBuffStatus();
 
-        Assert.AreEqual(15, player.damage);
-    }
+		damageBuff.ApplyCharacterStatus(player);
+		//damageBuff.RemoveCharacterStatus(player);
 
-   
+		Assert.Contains(damageBuff, player.statusEffects);
+	}
+
+	[Test]
+	public void PlayerApplyMoveSpeedDebuff()
+	{
+		GameObject playerGO = new GameObject("Player");
+		Player player = playerGO.AddComponent<Player>();
+
+		MoveSpeedDebuffStatus moveSpeedDebuff = new MoveSpeedDebuffStatus();
+
+		moveSpeedDebuff.ApplyCharacterStatus(player);
+
+		Assert.AreEqual(200, player.moveSpeed);
+	}
+
+
 
 
 }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player: CharacterBase, ICharacter
+public class Player: CharacterBase
 {
-    public override void Collect(CollectableBase collectable)
+	//Construtor
+	public Player()
     {
-
+		moveSpeed = 300;
+        damage = 50;
     }
 }

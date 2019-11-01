@@ -4,10 +4,10 @@ using UnityEngine;
 
 public interface ICharacter
 {
-    int health { get; set; }
-
+    int moveSpeed { get; set; }
     int damage { get; set; }
 
-    void Collect(CollectableBase collectable);
+    List<StatusEffectBase> statusEffects { get; set; }
+    
 
 }

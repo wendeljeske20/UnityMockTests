@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterBase : MonoBehaviour
+public abstract class CharacterBase : MonoBehaviour, ICharacter
 {
-    public int health { get; set; }
+	public int moveSpeed { get; set; }
 
-    public int damage { get; set; }
+	public int damage { get; set; }
 
-    public virtual void Collect(CollectableBase collectable)
-    {
+	public List<StatusEffectBase> statusEffects { get; set; }
 
-    }
+	//Construtor
+	public CharacterBase()
+	{
+		statusEffects = new List<StatusEffectBase>();
+	}
 }
