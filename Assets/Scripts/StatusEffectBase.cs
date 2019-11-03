@@ -5,12 +5,12 @@ using UnityEngine;
 public class StatusEffectBase
 {
     public float duration;
-    public virtual void ApplyCharacterStatus(ICharacter character)
+    public virtual void ApplyCharacterStatus(CharacterBase character)
     {
 		character.statusEffects.Add(this);
 	}
 
-    public virtual void RemoveCharacterStatus(ICharacter character)
+    public virtual void RemoveCharacterStatus(CharacterBase character)
     {
 		character.statusEffects.Remove(this);
 	}

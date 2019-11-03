@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CharacterBase : MonoBehaviour, ICharacter
+public abstract class CharacterBase : MonoBehaviour
 {
 	public int moveSpeed { get; set; }
+
+	public float healthRegen { get; set; }
+	public float health { get; set; }
 
 	public int damage { get; set; }
 
@@ -13,6 +16,6 @@ public abstract class CharacterBase : MonoBehaviour, ICharacter
 	//Construtor
 	public CharacterBase()
 	{
-		statusEffects = new List<StatusEffectBase>();
+		statusEffects = new List<StatusEffectBase>();		
 	}
 }
