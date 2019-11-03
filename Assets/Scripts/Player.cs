@@ -13,11 +13,4 @@ public class Player: CharacterBase
 		healthRegen = 0;
     }
 
-	public void UpdateHealth()
-	{
-		if(healthRegen != 0)
-		{
-			health += healthRegen * Time.deltaTime;
-		}
-	}
 }

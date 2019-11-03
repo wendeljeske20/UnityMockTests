@@ -5,7 +5,16 @@ using UnityEngine;
 public class StatusEffectBase
 {
     public float duration;
-    public virtual void ApplyCharacterStatus(CharacterBase character)
+	public int amount;
+
+	//Construtor
+	public StatusEffectBase(int amount, int duration)
+	{
+		this.amount = amount;
+		this.duration = duration;
+	}
+
+	public virtual void ApplyCharacterStatus(CharacterBase character)
     {
 		character.statusEffects.Add(this);
 	}

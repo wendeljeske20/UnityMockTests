@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class MoveSpeedDebuffStatus : StatusEffectBase
 {
-    public int amount = 100;
-    public override void ApplyCharacterStatus(CharacterBase character)
-    {
-		base.ApplyCharacterStatus(character);
-        character.moveSpeed -= amount;
-    }
+	public MoveSpeedDebuffStatus(int amount, int duration) : base(amount, duration)
+	{
+	}
 
-    public override void RemoveCharacterStatus(CharacterBase character)
-    {
+	public override void ApplyCharacterStatus(CharacterBase character)
+	{
+		base.ApplyCharacterStatus(character);
+		character.moveSpeed -= amount;
+	}
+
+	public override void RemoveCharacterStatus(CharacterBase character)
+	{
 		base.RemoveCharacterStatus(character);
 		character.moveSpeed += amount;
-    }
+	}
 }

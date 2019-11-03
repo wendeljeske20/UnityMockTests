@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DamageBuffStatus : StatusEffectBase
 {
-    public int amount = 10;
-    public override void ApplyCharacterStatus(CharacterBase character)
+	public DamageBuffStatus(int amount, int duration) : base(amount, duration)
+	{
+	}
+
+	public override void ApplyCharacterStatus(CharacterBase character)
     {
 		base.ApplyCharacterStatus(character);
         character.damage += amount;

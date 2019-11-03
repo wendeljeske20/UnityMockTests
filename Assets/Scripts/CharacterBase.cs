@@ -4,18 +4,18 @@ using UnityEngine;
 
 public abstract class CharacterBase : MonoBehaviour
 {
-	public int moveSpeed { get; set; }
+	public float health;
+	public float healthRegen;
+	public int damage;
+	public int moveSpeed;
+	
+	public List<StatusEffectBase> statusEffects = new List<StatusEffectBase>();
 
-	public float healthRegen { get; set; }
-	public float health { get; set; }
-
-	public int damage { get; set; }
-
-	public List<StatusEffectBase> statusEffects { get; set; }
-
-	//Construtor
-	public CharacterBase()
+	public void RegenHealth()
 	{
-		statusEffects = new List<StatusEffectBase>();		
+		if (healthRegen != 0)
+		{
+			health += healthRegen * Time.deltaTime;
+		}
 	}
 }

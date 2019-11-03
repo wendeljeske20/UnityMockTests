@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class HealthRegenBuff : StatusEffectBase
 {
-	public int amount;
-
-	public HealthRegenBuff()
+	public HealthRegenBuff(int amount, int duration) : base(amount, duration)
 	{
-		amount = 25;
-		duration = 3;
 	}
 
 	public override void ApplyCharacterStatus(CharacterBase character)
@@ -21,6 +17,6 @@ public class HealthRegenBuff : StatusEffectBase
 	public override void RemoveCharacterStatus(CharacterBase character)
 	{
 		base.RemoveCharacterStatus(character);
-		character.healthRegen = 0;
+		character.healthRegen -= amount;
 	}
 }
