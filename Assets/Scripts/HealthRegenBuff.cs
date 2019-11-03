@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class HealthRegenBuff : StatusEffectBase
 {
 	public HealthRegenBuff(int amount, int duration) : base(amount, duration)

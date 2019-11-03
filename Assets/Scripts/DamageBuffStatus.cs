@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿
 public class DamageBuffStatus : StatusEffectBase
 {
 	public DamageBuffStatus(int amount, int duration) : base(amount, duration)
