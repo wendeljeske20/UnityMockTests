@@ -17,3 +17,4 @@ public class MoveSpeedDebuffStatus : StatusEffectBase
 		character.moveSpeed += amount;
 	}
 }
+

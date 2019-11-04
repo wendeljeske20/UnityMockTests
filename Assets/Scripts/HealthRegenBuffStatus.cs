@@ -1,7 +1,7 @@
 ﻿
-public class HealthRegenBuff : StatusEffectBase
+public class HealthRegenBuffStatus : StatusEffectBase
 {
-	public HealthRegenBuff(int amount, int duration) : base(amount, duration)
+	public HealthRegenBuffStatus(int amount, int duration) : base(amount, duration)
 	{
 	}
 
@@ -17,3 +17,4 @@ public class HealthRegenBuff : StatusEffectBase
 		character.healthRegen -= amount;
 	}
 }
+

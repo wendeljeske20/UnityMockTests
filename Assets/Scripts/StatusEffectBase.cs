@@ -1,5 +1,5 @@
 ﻿
-public class StatusEffectBase
+public abstract class StatusEffectBase
 {
     public float duration;
 	public int amount;

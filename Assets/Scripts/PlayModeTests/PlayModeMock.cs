@@ -13,7 +13,7 @@ public class PlayModeMock
 		//Inicializa
 		GameObject playerGO = new GameObject("Player");
 		Player player = playerGO.AddComponent<Player>(); // health = 100
-		HealthRegenBuff healthRegenBuff = new HealthRegenBuff(amount: 25, duration: 3);
+		HealthRegenBuffStatus healthRegenBuff = new HealthRegenBuffStatus(amount: 25, duration: 3);
 
 		healthRegenBuff.ApplyCharacterStatus(player);
 
@@ -35,7 +35,5 @@ public class PlayModeMock
 		Assert.AreEqual(0, player.healthRegen);
 		Assert.False(player.statusEffects.Contains(healthRegenBuff));
 		Assert.Greater(player.health, 150);
-
-
 	}
 }
